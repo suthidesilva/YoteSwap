@@ -1,0 +1,576 @@
+/* Updated styles-3.css */
+:root {
+    --primary-color: rgb(154, 38, 221);
+    --secondary-color: #ffe600;
+    --text-color: #333;
+    --background-color: #f4f4f4;
+    --card-background: #ffffff;
+    --transition-speed: 0.3s;
+    --glow-color: rgba(154, 38, 221, 0.5);
+    --dark-primary: #9f2ff3;
+    --dark-background: #1a1a1a;
+    --dark-card: #2d2d2d;
+    --dark-text: #e0e0e0;
+}
+
+/* Enhanced Card Effects */
+.service-card, .news-card, .stat-card, .opinion-card {
+    background-color: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(154, 38, 221, 0.2);
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+}
+
+.service-card:hover, .news-card:hover, .stat-card:hover, .opinion-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px var(--glow-color);
+}
+
+/* Glass Morphism Effect */
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.service-card:hover::before {
+    left: 100%;
+}
+
+/* Enhanced Dark Mode */
+.dark-mode {
+    background-color: var(--dark-background);
+    color: var(--dark-text);
+}
+
+.dark-mode .header-container {
+    background-color: var(--dark-card);
+    border-bottom: 1px solid var(--dark-primary);
+}
+
+.dark-mode .service-card,
+.dark-mode .news-card,
+.dark-mode .stat-card,
+.dark-mode .opinion-card {
+    background-color: var(--dark-card);
+    box-shadow: 0 4px 8px rgba(159, 47, 243, 0.2);
+}
+
+/* Glow Effects */
+.logo {
+    position: relative;
+    text-shadow: 0 0 10px var(--glow-color);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px var(--glow-color);
+    }
+    to {
+        text-shadow: 0 0 20px var(--glow-color),
+                     0 0 30px var(--primary-color);
+    }
+}
+
+/* Mirror Effect for Images */
+.service-card img {
+    transition: transform 0.5s ease;
+    position: relative;
+}
+
+.service-card img:hover {
+    transform: scale(1.05);
+}
+
+.service-card img::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.3), transparent);
+    transform: scaleY(-1);
+    filter: blur(2px);
+}
+
+/* Enhanced Button Styles */
+.btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+/* Enhanced Navigation Effects */
+.navbar ul li a {
+    position: relative;
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.navbar ul li a:hover::before {
+    width: 100%;
+}
+
+/* Stats Animation */
+.stat-card:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(145deg, var(--card-background), var(--background-color));
+}
+
+.dark-mode .stat-card:hover {
+    background: linear-gradient(145deg, var(--dark-card), var(--dark-background));
+}
+
+/* Opinion Cards Enhancement */
+.opinion-card {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.opinion-card:hover {
+    transform: scale(1.02);
+}
+
+.opinion-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    pointer-events: none;
+}
+
+/* Form Input Enhancement */
+.form-group input {
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px var(--glow-color);
+    outline: none;
+}
+
+/* Modal Enhancement */
+.modal-content {
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 0 20px var(--glow-color);
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header and Navbar styles */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: var(--card-background);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: top 0.3s;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-right: 2rem;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin-right: 1rem;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 0.5rem;
+    transition: color var(--transition-speed);
+}
+
+.navbar ul li a:hover {
+    color: var(--secondary-color);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    padding: 0.5rem;
+    margin-right: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Dark mode styling */
+.dark-mode {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+.dark-mode .header-container,
+.dark-mode .service-card,
+.dark-mode .news-card,
+.dark-mode .stat-card,
+.dark-mode .opinion-card {
+    background-color: #444;
+    color: #f4f4f4;
+}
+
+#theme-button, #reduce-motion {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#theme-button:hover, #reduce-motion:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+/* Button styles */
+.btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Hero Section */
+main {
+    margin-top: 80px;
+}
+
+.hero {
+    background-image: url('foodbg.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 8rem 5%;
+    position: relative; 
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.473); 
+    z-index: 0;
+}
+
+.hero * {
+    position: relative; 
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+/* Section styling */
+.services, .impact, .news, .opinions {
+    padding: 4rem 5%;
+    background-color: var(--background-color);
+}
+
+.services-grid, .news-grid, .impact-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.meal-swap-img, .service-card img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.service-card, .news-card, .stat-card, .opinion-card {
+    background-color: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgb(154, 38, 221);
+    text-align: center;
+}
+
+/* Footer styles */
+footer {
+    background-color: var(--text-color);
+    color: white;
+    padding: 2rem 5%;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.social-icons {
+    display: flex;
+}
+
+.social-icon {
+    margin-right: 1rem;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.social-icon:hover {
+    color: var(--primary-color);
+}
+
+/* Petition section */
+.petition {
+    padding: 4rem 0;
+    background-color: var(--background-color);
+}
+
+.petition-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.petition-para {
+    width: 55%;
+    padding-right: 2rem;
+}
+
+.petition-para ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.signatures {
+    width: 45%;
+    padding: 1rem;
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.petition-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group input.error {
+    border-color: #ff0000;
+    background-color: #fff0f0;
+}
+
+.error-message {
+    color: #ff0000;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: none;
+}
+
+/* Scrolling Animation */
+.hero, .services, .impact, .news, .opinions, .petition {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.revealable.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--card-background);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    animation: modal-scale 0.5s ease-out forwards;
+}
+
+@keyframes modal-scale {
+    from { transform: scale(0.8); }
+    to { transform: scale(1); }
+}
+
+.modal-image {
+    width: 150px;
+    height: 150px;
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.dark-mode .petition-form,
+.dark-mode .signatures {
+    background-color: var(--card-background);
+    color: var(--text-color);
+}
+
+.dark-mode input {
+    background-color: #3d3d3d;
+    border-color: #4d4d4d;
+    color: rgb(0, 0, 0);
+}
+
+#counter {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    color: var(--primary-color);
+    font-weight: 500;
+}

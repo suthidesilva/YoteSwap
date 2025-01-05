@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YoteSwap - Revolutionary Swapping Platform</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="header-container">
+        <nav class="navbar">
+            <div class="logo">YoteSwap</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#opinions">Opinions</a></li>
+                <li><button id="theme-button" class="btn">Toggle Dark Mode</button></li>
+                <li><button id="reduce-motion" class="btn">Reduce Motion</button></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <input type="text" placeholder="Search..." class="search-input">
+            <button class="btn btn-primary">Sign Up</button>
+            <button class="btn btn-secondary">Log In</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero revealable">
+            <div class="hero-content">
+                <h1>Welcome to YoteSwap</h1>
+                <p>WE MADE THE CONCEPT OF SWAPPING REVOLUTIONARY</p>
+                <a href="https://collegeofidaho.cafebonappetit.com/" class="btn btn-large">EXPLORE SERVICES</a>
+            </div>
+        </section>
+
+        <section id="services" class="services revealable">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="https://www.clker.com/cliparts/k/3/5/B/0/6/restaurant-meal-md.png" alt="Meal Swap" class="meal-swap-img">
+                    <h3><a href="https://collegeofidaho.cafebonappetit.com/catering/">Meal Swap</a></h3>
+                    <p>Exchange delicious homemade meals with your community.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://cdn.vectorstock.com/i/500p/16/27/open-book-clipart-silhouette-symbol-icon-design-vector-24231627.jpg" alt="Book Swap">
+                    <h3><a href="https://www.collegeofidaho.edu/library">Book Swap</a></h3>
+                    <p>Trade books and expand your literary horizons.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://illustoon.com/photo/4162.png" alt="Cloth Swap">
+                    <h3><a href="https://www.yotestore.com/s/shop">Cloth Swap</a></h3>
+                    <p>Refresh your wardrobe sustainably with clothing exchanges.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://www.shutterstock.com/image-vector/pencil-paper-icon-contract-vector-600nw-1845990013.jpg" alt="Note Swap">
+                    <h3><a href="https://www.collegeofidaho.edu/library">Note Swap</a></h3>
+                    <p>Share study materials and boost your academic performance.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="impact" class="impact revealable">
+            <h2>Our Impact</h2>
+            <div class="impact-stats">
+                <div class="stat-card">
+                    <h3>10,000+</h3>
+                    <p>Active Users</p>
+                </div>
+                <div class="stat-card">
+                    <h3>50,000+</h3>
+                    <p>Successful Swaps</p>
+                </div>
+                <div class="stat-card">
+                    <h3>5 Tons</h3>
+                    <p>Waste Reduced</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="news" class="news revealable">
+            <h2>Latest News</h2>
+            <div class="news-grid">
+                <article class="news-card">
+                    <h3>YoteSwap Expands to 5 New Campuses</h3>
+                    <p>Our platform is now available at five additional universities...</p>
+                    <a href="#" class="read-more">Read More</a>
+                </article>
+                <article class="news-card">
+                    <h3>New Feature: Virtual Swap Meets</h3>
+                    <p>Introducing our new virtual swap meet feature for remote exchanges...</p>
+                    <a href="#" class="read-more">Read More</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="opinions" class="opinions revealable">
+            <h2>Student Opinions</h2>
+            <div class="opinion-slider">
+                <div class="opinion-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoG-TQHPn-N-NZ9YiDbqWP5nze8EOKEzhl9ggxHTbFFEDYXVCi6aczCKO6-uMs_irBQhA&usqp=CAU" alt="Student 1" class="student-avatar">
+                    <blockquote>"YoteSwap has completely changed how I manage my resources as a student. It's not just convenient; it's revolutionary!"</blockquote>
+                    - Jane Doe, Environmental Science Major
+                </div>
+            </div>
+        </section>
+
+        <section id="petition" class="petition revealable">
+            <h2>Support Sustainable Swapping</h2>
+            <p id="counter">3 people have signed this petition</p>
+            <form id="sign-petition" class="petition-form">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" required>
+                    <span class="error-message"></span>
+                </div>
+                <div class="form-group">
+                    <label for="hometown">Hometown:</label>
+                    <input type="text" id="hometown" required>
+                    <span class="error-message"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                    <span class="error-message"></span>
+                </div>
+                <button type="submit" id="sign-now-button" class="btn btn-primary">Sign Now</button>
+            </form>
+        </section>
+
+        <!-- Modal Popup -->
+        <div id="thanks-modal" class="modal">
+            <div class="modal-content">
+                <div id="modal-text-container">
+                    <p id="thanks-modal-content"></p>
+                    <button id="close-modal" class="btn">Close</button>
+                </div>
+                <img src="https://cdn-icons-png.flaticon.com/256/7985/7985024.png" alt="Thank You" class="modal-image">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#impact">Impact</a></li>
+                    <li><a href="#news">News</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>123 Swap Street, Yoteville</p>
+                <p>Phone: +1 208 XXX XXXX</p>
+                <p>Email: info@yoteswap.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">FB</a>
+                    <a href="#" class="social-icon">TW</a>
+                    <a href="#" class="social-icon">IG</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 YoteSwap. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
