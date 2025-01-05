@@ -26,3 +26,13 @@ Leverage SwiftUI for a responsive and visually appealing interface.
 Frontend: SwiftUI for UI, Combine for reactive programming.
 Backend: Firebase (Authentication, Firestore, Cloud Functions).
 Testing: XCTest for unit testing.
+
+Testing and Optimization
+Use XCTest for unit testing:
+Test authentication, CRUD operations, and UI flows.
+Optimize by profiling app performance using Xcode's Instruments.
+Deployment
+Test on iOS devices with various screen sizes.
+Publish on the App Store:
+Prepare app assets and descriptions.
+Submit for review.
